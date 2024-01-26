@@ -46,6 +46,7 @@ public class UserController {
 
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:3000",maxAge = 3600)
     @PostMapping("/updateimage")
     public ResponeUpdateDTO updateUserImages(@RequestParam(value = "userid",required = true) Integer userid, @RequestParam(value = "image",required = true)  MultipartFile image, HttpServletResponse response){
         if( image.isEmpty() || !validateFileImg(image.getContentType()) ){
